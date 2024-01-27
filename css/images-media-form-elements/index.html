@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 20px;
+        }
+        
+        .wrapper>div {
+            background-color: rebeccapurple;
+            border-radius: .5em;
+        }
+        
+        textarea {
+            overflow: hidden
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <hr>
+    <form action="">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <label for="intro">introduction</label>
+        <textarea name="introduction" id="intro" cols="30" rows="10"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

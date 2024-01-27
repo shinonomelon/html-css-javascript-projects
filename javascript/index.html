@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>alert</button>
+    <script>
+        // fetchURLという関数を定義します。この関数はURLを引数に取り、Promiseを返します。
+        function fetchURL(URL) {
+            return new Promise((resolve, reject) => {
+                // XMLHttpRequestを作成します。
+                const req = new XMLHttpRequest();
+                // GETリクエストを開きます。
+                req.open("GET", URL, true);
+                // リクエストが成功した場合の処理を定義します。
+                req.onload = () => {
+                    // ステータスコードが200から300未満の場合、リクエストのテキストを解決します。
+                    if (200 <= req.status && req.status < 300) {
+                        resolve(req.responseText);
+                    } else {
+                        // それ以外の場合、エラーを拒否します。
+                        reject(new Error(req.statusText));
+                    }
+                };
+                // リクエストが失敗した場合の処理を定義します。
+                req.onerror = () => {
+                    reject(new Error(req.statusText));
+                };
+                // リクエストを送信します。
+                req.send();
+            });
+        }
+
+        // 実行例
+        // URLを定義します。
+        const URL = "https://jsonplaceholder.typicode.com/posts/1";
+        // fetchURL関数を呼び出し、成功した場合は結果をログに出力し、失敗した場合はエラーをログに出力します。
+        fetchURL(URL).then(function onFulfilled(value) {
+            console.log(value);
+        }).catch(function onRejected(error) {
+            console.error(error);
+        });
+
+        fetch(URL).then(function onFulfilled(value) {
+            console.log(value);
+        }).catch(function onRejected(error) {
+            console.error(error);
+        });
+    </script>
+    <!-- <script type="module" src="main.js"></script>
+    <script type="module" src="foo.js"></script> -->
+
+</body>
+
+</html>

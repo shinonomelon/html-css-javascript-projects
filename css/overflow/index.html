@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+        
+        section {
+            background-color: gray;
+        }
+        
+        ul {
+            background-color: gray;
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            list-style: none;
+            overflow: scroll;
+            justify-content: flex-start;
+            white-space: nowrap;
+            /* 追加 */
+        }
+        
+        li {
+            width: 190px;
+            height: 190px;
+            background-color: blue;
+            margin-right: 10px;
+            border-radius: 100%;
+            flex-shrink: 0;
+            /* サイズ変更を防ぐ */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.</div>
+
+    <p>This content is outside of the box.</p>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</body>
+
+</html>

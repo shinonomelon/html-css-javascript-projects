@@ -1,0 +1,36 @@
+section>h1 {
+    color: red;
+}
+
+article p+p {
+    color: blue;
+}
+
+p::after {
+    content: " - I'm a pseudo element!";
+    color: red;
+}
+
+.fix {
+    all: unset;
+}
+
+img {
+    border-radius: 100%;
+    width: min(100%, 300px);
+    /* border: 1px dotted red; */
+}
+
+div,
+span {
+    background-color: rgb(221, 221, 255);
+}
+
+div span {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid red;
+    display: inline-block;
+}
+
+#clamp {}

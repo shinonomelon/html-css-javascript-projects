@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function asyncFunction() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    <!-- throw Error("Error is happened!") -->
+                    resolve("Async Hello world");
+                }, 16);
+            });
+        }
+        // 以下の二つは同じ
+        asyncFunction().then((value) => {
+            console.log(value); // => 'Async Hello world'
+        }).catch((error) => {
+
+            console.error(error);
+        });
+
+        asyncFunction().then((value) => {
+            console.log(value);
+        }, (error) => {
+            console.error(error);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+article p::first-line {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.first-of-type p:first-child {
+    color: red;
+}
+
+.first-child p:first-of-type {
+    color: red;
+}
+
+article.first-line p::first-line:first-child {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(151, 151, 249);
+    transition: background-color .1s ease-in-out .1s;
+}
+
+button:hover {
+    background-color: rgb(95, 95, 215);
+}
+
+.box::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+}
+
+.box::after {
+    content: "after";
+    color: blue;
+}
+
+ul li {
+    border-top: 5px solid red;
+}

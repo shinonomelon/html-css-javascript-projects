@@ -1,0 +1,92 @@
+strong {
+    font-weight: 900;
+}
+
+.my-component {
+    font-weight: 500;
+}
+
+.my-component strong {
+    font-weight: inherit;
+}
+
+
+/* System font stack to show the difference in weights */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
+
+p {
+    font-weight: 800;
+}
+
+strong {
+    font-weight: inherit;
+}
+
+aside strong {
+    font-weight: initial;
+}
+
+
+/* presentational styles */
+
+article>*+* {
+    margin-top: 1em;
+}
+
+p {
+    margin-top: 2em;
+    color: goldenrod;
+    padding: 2em;
+    border: 1px solid;
+}
+
+
+/* Not all properties are accounted for anymore */
+
+aside p {
+    margin: unset;
+    color: unset;
+}
+
+
+/* Decorative styles */
+
+aside {
+    margin-top: 2em;
+}
+
+.my-element {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(#778ca3, #4b6584);
+    border: 5px solid;
+    border-top-color: lightsteelblue;
+    border-right-color: lightsteelblue;
+    border-bottom-color: lightslategray;
+    border-left-color: slategray;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+.transform {
+    width: 150px;
+    height: 150px;
+    transform: rotate(60deg);
+    background-color: red;
+}
+
+span {
+    background-color: red;
+}

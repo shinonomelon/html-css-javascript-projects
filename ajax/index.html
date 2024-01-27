@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajax Example</title>
+</head>
+
+<body>
+    <button id="loadButton">データをロード</button>
+    <div id="data"></div>
+
+    <script>
+        document.getElementById('loadButton').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+            console.log(xhr.posts);
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('data').innerHTML = xhr.responseText;
+                } else {
+                    alert('リクエストに失敗しました: ' + xhr.status);
+                }
+            };
+
+            xhr.onerror = function() {
+                alert('リクエスト中にエラーが発生しました。');
+            };
+
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>

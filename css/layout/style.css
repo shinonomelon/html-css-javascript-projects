@@ -1,0 +1,15 @@
+.colored {
+    list-style: none;
+    display: flex;
+}
+
+@media screen and (max-width: 600px) {
+    .colored {
+        flex-direction: column;
+    }
+}
+
+.countries {
+    column-count: 2;
+    column-gap: 1em;
+}
